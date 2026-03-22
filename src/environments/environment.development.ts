@@ -7,5 +7,5 @@ export const environment = {
   apiBaseUrl: '/api',
   // false = usa la API real de SELAE a través del proxy
   // true  = usa datos mock locales (sin conexión a internet)
-  useMockData: false,
+  useMockData: true,
 };

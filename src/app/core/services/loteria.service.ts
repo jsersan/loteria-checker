@@ -130,7 +130,7 @@ export class LoteriaNacionalService {
       .set('tipoBoleto', 'LOTERIA_NACIONAL')
       .set('idsorteo', idsorteo);
 
-    return this.http.get<RespuestaApiSelae>('/api/premioDecimoWeb', { params }).pipe(
+      return this.http.get<RespuestaApiSelae>('https://loteria-proxy.jsersan.workers.dev/premioDecimoWeb', { params }).pipe(
       map(resp => {
         // Si la respuesta es string (error), comprobar si es E021
         const raw = typeof resp === 'string' ? (resp as string) : (resp?.premio ?? '');

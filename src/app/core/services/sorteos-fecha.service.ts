@@ -70,11 +70,11 @@ export class SorteosFechaService {
 
   readonly fechasSorteos$: Observable<SorteoFecha[]> =
     // Estrategia 1: parsear el HTML de la página de SELAE
-    this.http.get('/selae-html/es/loteria-nacional', { responseType: 'text' }).pipe(
+    this.http.get('https://loteria-proxy.jsersan.workers.dev/loteria-nacional', { responseType: 'text' }).pipe(
       map(html => this.parseHtml(html)),
       catchError(() =>
         // Estrategia 2: intentar API JSON
-        this.http.get<RespuestaSorteos>('/api/sorteoDecimoWeb', {
+        this.http.get<RespuestaSorteos>('https://loteria-proxy.jsersan.workers.dev/sorteoDecimoWeb', {
           params: { tipoBoleto: 'LOTERIA_NACIONAL' },
         }).pipe(
           map(resp => this.parseJson(resp)),

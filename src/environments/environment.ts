@@ -5,5 +5,5 @@ export const environment = {
   production: true,
   angularVersion: 20,
   apiBaseUrl: '/api',
-  useMockData: false,
+  useMockData: true,
 };
