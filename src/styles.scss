@@ -1,0 +1,119 @@
+/* ===================================
+   LOTERÍA NACIONAL — Global Styles
+   Paleta SELAE: azul institucional + naranja acción
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  /* ── Paleta SELAE ── */
+  --color-azul:          #003876;   /* azul institucional SELAE */
+  --color-azul-medio:    #1a5298;   /* hover / secundario */
+  --color-azul-claro:    #2d72c8;   /* enlaces, acentos */
+  --color-azul-suave:    #e8f0fa;   /* fondos de sección */
+  --color-naranja:       #f5a623;   /* botón de acción principal */
+  --color-naranja-hover: #e6920e;   /* hover botón */
+  --color-naranja-texto: #1a0000;   /* texto sobre naranja */
+
+  /* ── Fondo y texto ── */
+  --color-fondo:         #f4f6fb;   /* fondo general gris muy claro */
+  --color-fondo-blanco:  #ffffff;
+  --color-fondo-panel:   #ffffff;   /* tarjetas blancas */
+  --color-fondo-header:  #003876;   /* cabecera azul oscuro */
+  --color-texto:         #1a2540;   /* texto principal oscuro */
+  --color-texto-suave:   #4a5568;   /* texto secundario */
+  --color-texto-tenue:   #8a9ab5;   /* placeholders, hints */
+  --color-texto-blanco:  #ffffff;
+
+  /* ── Bordes ── */
+  --color-borde:         #d0dae8;
+  --color-borde-hover:   #2d72c8;
+  --color-borde-foco:    #f5a623;
+
+  /* ── Semánticos ── */
+  --color-exito:         #2e7d32;
+  --color-exito-bg:      #e8f5e9;
+  --color-exito-borde:   #a5d6a7;
+  --color-error:         #c62828;
+  --color-error-bg:      #ffebee;
+  --color-error-borde:   #ef9a9a;
+
+  /* ── Tipografía ── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* ── Misc ── */
+  --transition: 0.2s ease;
+  --radio:      6px;
+  --sombra:     0 2px 12px rgba(0, 56, 118, 0.1);
+  --sombra-lg:  0 4px 24px rgba(0, 56, 118, 0.15);
+}
+
+/* ── Reset ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-azul);
+}
+
+a {
+  color: var(--color-azul-claro);
+  text-decoration: none;
+  transition: color var(--transition);
+  &:hover { color: var(--color-azul); }
+}
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-fondo); }
+::-webkit-scrollbar-thumb { background: var(--color-azul-claro); border-radius: 3px; }
+
+/* ── Animaciones globales ────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.fade-in-up { animation: fadeInUp 0.4s ease both; }
+
+/* ── Divider ─────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1rem 0;
+}
+.divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-borde);
+}
+.divider__diamond {
+  color: var(--color-azul-claro);
+  font-size: 10px;
+}
+
+/* ── Focus ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-naranja);
+  outline-offset: 2px;
+  border-radius: var(--radio);
+}
