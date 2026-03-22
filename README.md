@@ -361,5 +361,3 @@ EUROMILLONES: {
 ## Licencia
 
 MIT — Proyecto de demostración. Para uso real consulta siempre [loteriasyapuestas.es](https://www.loteriasyapuestas.es).
-# loteria-checker
-# loteria-checker
